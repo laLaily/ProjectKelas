@@ -1,2 +1,6 @@
 Q1 : jelaskan atau deskripsikan tentang project nanti yang akan dibuat. berapa banyak tabel dan aktor(pengguna) yang ada di project kalian masing-masing?
-Answers : ?
+Answers : Membuat sebuah program transaksi pesan makanan. 
+Dimana terdapat 4 class, yaitu class produk, pesanan, transaksi, dan kasir. 
+Class pesanan akan mengextend class produk, kemudian class transaksi akan mengextend class pesanan dan class kasir untuk mengambil id kasirnya saja.
+Jadi user akan diminta memilih menunya dan jumlah menunya, setelah itu proses transaksi akan dilanjutkan oleh kasir sesuai dngan nomor transaksinya. 
+Disini akan menggunakan ArrayList.
