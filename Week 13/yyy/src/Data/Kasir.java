@@ -14,4 +14,5 @@ public class Kasir {
     public int getId() {
         return id;
     }
+    public String getPass() {return password; }
 }

@@ -10,4 +10,16 @@ public class Menu {
         this.harga = harga;
         this.codeMenu = codeMenu;
     }
+
+    public String getMenu() {
+        return menu;
+    }
+
+    public int getHarga() {
+        return harga;
+    }
+
+    public int getCodeMenu() {
+        return codeMenu;
+    }
 }

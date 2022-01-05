@@ -3,16 +3,25 @@ package Data;
 import java.util.ArrayList;
 
 public class Pesanan {
-    Menu menu;
-    int jumPM ;
-    int totalhargaPM;
-    int hargaSemua;
+    private Menu menu;
+    private int jumPM ;
+    private int totalhargaPM;
 
-    public Pesanan(Menu m, int jumPm, int totalhargaPm, int hargasemua){
+    public Pesanan(Menu m, int jumPm, int totalhargaPm){
         this.menu = m;
         this.jumPM = jumPm;
         this.totalhargaPM = totalhargaPm;
-        this.hargaSemua = hargasemua;
     }
 
+    public Menu getMenu() {
+        return menu;
+    }
+
+    public int getJumPM() {
+        return jumPM;
+    }
+
+    public int getTotalhargaPM() {
+        return totalhargaPM;
+    }
 }
