@@ -9,6 +9,19 @@ public class DefaultMenuModel {
         adddefMenu();
     }
 
+    public ArrayList<Menu> getMenu() {
+        return menu;
+    }
+
+    public Menu getByCode(int code){
+        for (Menu m : menu){
+            if (m.getCodeMenu()==code){
+                return m;
+            }
+        }
+        return null;
+    }
+
     private void adddefMenu(){
         menu.add(new Menu(185, "pitik", 10000));
         menu.add(new Menu(186, "bebek", 40000));

@@ -12,11 +12,14 @@ public class PesananModel {
 
     public void cetakPesanan(){
         for(int i=0; i< pesan.size(); i++){
-            System.out.print(pesan.get(i).getMenu().getCodeMenu());
-            System.out.print(pesan.get(i).getMenu().getMenu());
-            System.out.print(pesan.get(i).getMenu().getHarga());
-            System.out.print(pesan.get(i).getJumPM());
-        System.out.print(pesan.get(i).getTotalhargaPM() );
+            System.out.print(pesan.get(i).getMenu().getCodeMenu() + " ");
+            System.out.print(pesan.get(i).getMenu().getMenu() + " ");
+            System.out.print(pesan.get(i).getMenu().getHarga() + " ");
+            System.out.print(pesan.get(i).getJumPM() + " ");
+            System.out.print(pesan.get(i).getTotalhargaPM());
+            System.out.println();
         }
     }
+
+
 }
