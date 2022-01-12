@@ -1,30 +1,63 @@
 package Main;
 
+import Controller.DefaultMenuController;
+import Controller.KasirController;
+import Controller.PesananController;
 import Data.Menu;
 import Data.Pesanan;
-import Data.Transaksi;
-import Model.DefaultMenuModel;
-import Model.KasirModel;
-import Model.PesananModel;
 import Model.TransaksiModel;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainClass {
+
     static Scanner scan = new Scanner(System.in);
-    static DefaultMenuModel defmenu = new DefaultMenuModel();
-    static PesananModel pesan = new PesananModel();
+    static DefaultMenuController defmenu = new DefaultMenuController();
+    static PesananController pesan = new PesananController();
     static ArrayList<Pesanan> psn = new ArrayList<>();
     static TransaksiModel trx = new TransaksiModel();
+    static KasirController kasir = new KasirController();
 
     public static void main(String[] args) {
+
+        int pil;
+        do{
+            System.out.println("1. Pembeli \n2. Kair");
+            System.out.print("Pilih:");
+            pil=scan.nextInt();
+            if(pil==1){
+                int a;
+                do{
+                    System.out.println("1. Pilih Menu \n2. Lihat Pesanan");
+                    System.out.print("Pilih : ");
+                    a = scan.nextInt();
+                    if (a==1){
+                        pilihMenu();
+                    }
+                    else {
+                        pesan.cetakPesanan();
+                    }
+                }while (a!=0);
+
+            } else {
+                System.out.print("ID : ");
+                int id = scan.nextInt();
+                System.out.print("Password : ");
+                String pass = scan.next();
+                if(kasir.cekLogin(id, pass) != 0){
+
+                } else {
+                    System.out.println("Id atau Password salah");
+                }
+            }
+        }while(true);
 
 //        KasirModel kasir = new KasirModel();
 //        System.out.println(kasir.ceklogin(123,"safi"));
 
-        pilihMenu();
-        pesan.cetakPesanan();
+//        pilihMenu();
+//        pesan.cetakPesanan();
 //        defTrx();
 //        trx.cetakTransaksi(1);
 

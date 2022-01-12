@@ -10,4 +10,6 @@ public class TransaksiController {
     public void cetakData(int noTrx){
         AllObjModel.transaksi.cetakTransaksi(noTrx);
     }
+
+
 }

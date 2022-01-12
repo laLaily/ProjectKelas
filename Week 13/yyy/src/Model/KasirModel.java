@@ -14,7 +14,7 @@ public class KasirModel {
         datakasir.add(new Kasir ("Laily", 185, "laily"));
     }
 
-    public int ceklogin (int id, String pass){
+    public int ceklogin(int id, String pass) {
         for (Kasir a : datakasir){
             if(a.getId()==id && a.getPass().equals(pass)){
                 return id;
