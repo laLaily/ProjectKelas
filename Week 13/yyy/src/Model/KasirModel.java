@@ -8,10 +8,10 @@ public class KasirModel {
     public KasirModel() { anggota(); }
 
     private void anggota(){
-        datakasir.add(new Kasir ("Mitha", 123, "mitha"));
-        datakasir.add(new Kasir ("Tasya", 456, "tasya"));
-        datakasir.add(new Kasir ("Safi", 789, "safi"));
-        datakasir.add(new Kasir ("Laily", 185, "laily"));
+        datakasir.add(new Kasir ("Mitha", 3, "mitha"));
+        datakasir.add(new Kasir ("Tasya", 9, "tasya"));
+        datakasir.add(new Kasir ("Safi", 8, "safi"));
+        datakasir.add(new Kasir ("Laily", 5, "laily"));
     }
 
     public int ceklogin(int id, String pass) {

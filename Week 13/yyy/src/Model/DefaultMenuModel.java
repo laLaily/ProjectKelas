@@ -23,16 +23,16 @@ public class DefaultMenuModel {
     }
 
     private void adddefMenu(){
-        menu.add(new Menu(185, "pitik", 10000));
-        menu.add(new Menu(186, "bebek", 40000));
-        menu.add(new Menu(187, "sapi", 50000));
-        menu.add(new Menu(188, "babi", 60000));
-        menu.add(new Menu(189, "telur", 30000));
+        menu.add(new Menu(11, "Masker", 20000));
+        menu.add(new Menu(22, "Skincare", 70000));
+        menu.add(new Menu(33, "Ciki", 1000));
+        menu.add(new Menu(44, "Parfum", 55000));
+        menu.add(new Menu(55, "tisu", 12000));
     }
 
     public void cetak(){
         for(int i=0; i<menu.size(); i++){
-            System.out.print("Code " + menu.get(i).getCodeMenu()+" : "+menu.get(i).getMenu()+" "+menu.get(i).getHarga());
+            System.out.print("Code " + menu.get(i).getCodeMenu()+" : "+menu.get(i).getMenu()+" Rp"+menu.get(i).getHarga());
             System.out.println();
         }
     }

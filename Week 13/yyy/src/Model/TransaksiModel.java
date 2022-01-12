@@ -39,4 +39,16 @@ public class TransaksiModel {
         }
     }
 
+    public void cetakTransaksi(){
+        for(int i=0;i<trx.size();i++){
+               System.out.println("nomor transaksi = "+trx.get(i).getNoTRX());
+                for(int j=0;j<trx.get(i).getPesan().size();j++){
+                    System.out.println(trx.get(i).getPesan().get(j).getMenu().getMenu());
+                    System.out.println(trx.get(i).getPesan().get(j).getMenu().getHarga());
+                    System.out.println(trx.get(i).getPesan().get(j).getTotalhargaPM());
+                    System.out.println(trx.get(i).getPesan().get(j).getJumPM());
+                }
+                System.out.println("harga total = "+trx.get(i).getHargaTotal());
+        }
+    }
 }
