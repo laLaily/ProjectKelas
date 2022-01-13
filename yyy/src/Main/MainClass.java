@@ -7,23 +7,23 @@ import Controller.TransaksiController;
 import Data.Menu;
 import Data.Pesanan;
 import Data.Transaksi;
-import Model.TransaksiModel;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainClass {
 
+    static ArrayList<ArrayList<Pesanan>> listPesan = new ArrayList<>();
     static Scanner scan = new Scanner(System.in);
     static DefaultMenuController defmenu = new DefaultMenuController();
     static PesananController pesan = new PesananController();
-    static ArrayList<Pesanan> psn = new ArrayList<>();
     static TransaksiController trx = new TransaksiController();
     static KasirController kasir = new KasirController();
+    static int i = 1;
 
     public static void main(String[] args) {
-
         int pil;
+        int ctr = 0;
         do {
             System.out.println("1. Pembeli \n2. Kasir");
             System.out.print("Pilih : ");
@@ -31,7 +31,7 @@ public class MainClass {
             if (pil == 1) {
                 int a;
                 do {
-                    System.out.println("1. Pilih Menu \n2. Lihat Pesanan");
+                    System.out.println("1. Pilih Menu \n2. Lihat Pesanan \n0. logout");
                     System.out.print("Pilih : ");
                     a = scan.nextInt();
                     switch (a) {
@@ -41,14 +41,9 @@ public class MainClass {
                         case 2:
                             pesan.cetakPesanan();
                             break;
-
+//                        default :
+//                            System.out.println("pilihan tiak ada");
                     }
-//                    if (a==1){
-//                        pilihMenu();
-//                    }
-//                    else {
-//                        pesan.cetakPesanan();
-//                    }
                 } while (a != 0);
             } else {
                 System.out.print("ID : ");
@@ -56,7 +51,7 @@ public class MainClass {
                 System.out.print("Password : ");
                 String pass = scan.next();
                 if (kasir.cekLogin(id, pass) != 0) {
-                    pesan.cetakPesanan();
+//                    pesan.cetakPesanan();
                     trx.cetakTransaksi();
                 } else {
                     System.out.println("Id atau Password salah");
@@ -67,8 +62,9 @@ public class MainClass {
     }
 
     public static void pilihMenu(){
+        ArrayList<Pesanan> psn = new ArrayList<>();
         defmenu.cetak();
-        int i = 1;
+
         int hargaTotal = 0;
         String a="y";
         do{
@@ -78,11 +74,11 @@ public class MainClass {
             int banyak = scan.nextInt();
             int totalharga = banyak * defmenu.getByCode(code).getHarga();
             pesan.tambahPesanan(new Pesanan(defmenu.getByCode(code),banyak,totalharga));
+            psn.add(new Pesanan(defmenu.getByCode(code),banyak,totalharga));
             hargaTotal = hargaTotal + totalharga;
             System.out.print("Pilih menu lain ?(y/n) ");
             a = scan.next();
         }while(a.equals("y"));
-
         trx.tambahTrx(new Transaksi(psn,hargaTotal,i));
         i++;
     }

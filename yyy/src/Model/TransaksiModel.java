@@ -43,16 +43,17 @@ public class TransaksiModel {
 
     public void cetakTransaksi(){
         for(int i=0;i<trx.size();i++){
-               System.out.println("nomor transaksi = "+trx.get(i).getNoTRX());
-
+            System.out.println("============================");
+               System.out.println("Nomor Transaksi = "+trx.get(i).getNoTRX());
+            System.out.println("Daftar Pesanan : ");
                 for(int j=0;j<trx.get(i).getPesan().size();j++){
-                    System.out.println(trx.get(i).getPesan().get(j).getMenu().getMenu());
-                    System.out.println(trx.get(i).getPesan().get(j).getMenu().getHarga());
-                    System.out.println(trx.get(i).getPesan().get(j).getTotalhargaPM());
-                    System.out.println(trx.get(i).getPesan().get(j).getJumPM());
+                    System.out.println("Pesanan ke-"+(j+1));
+                    System.out.println("Menu   = "+trx.get(i).getPesan().get(j).getMenu().getMenu());
+                    System.out.println("Harga  = "+trx.get(i).getPesan().get(j).getMenu().getHarga());
+                    System.out.println("Total  = "+trx.get(i).getPesan().get(j).getTotalhargaPM());
+                    System.out.println("Jumlah = "+trx.get(i).getPesan().get(j).getJumPM());
                 }
-
-                System.out.println("harga total = "+trx.get(i).getHargaTotal());
+                System.out.println("TOTAL = "+trx.get(i).getHargaTotal());
         }
 
     }
